@@ -38,12 +38,6 @@ def create_bucket(name, client: storage.Client):
     print(f"Bucket {name} created")
     return bucket
 
-def create_blob(root_bucket: storage.Bucket, destination_name, data_type, data):
-    blob = root_bucket.blob(destination_name)
-    generation_match_precondition = 0
-    blob.upload_from_string(data, data_type, if_generation_match=generation_match_precondition)
-    print("file created")
-
 def get_data(url, headers):
     filePayload = open("request.xml", "r")
     payload = filePayload.read()
