@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tdpplv1="http://datex2.eu/wsdl/TDP/Soap_Datex2/Pull/v1" xmlns:dx223="http://datex2.eu/schema/2/2_0">
+	<SOAP-ENV:Body>
+		<dx223:d2LogicalModel xsi:type="dx223:D2LogicalModel" modelBaseVersion="2">
+			<dx223:exchange xsi:type="dx223:Exchange">
+				<dx223:supplierIdentification xsi:type="dx223:InternationalIdentifier">
+					<dx223:country xsi:type="dx223:CountryEnum">ch</dx223:country>
+					<dx223:nationalIdentifier xsi:type="dx223:String">FEDRO</dx223:nationalIdentifier>
+				</dx223:supplierIdentification>
+			</dx223:exchange>
+			<dx223:payloadPublication xsi:type="dx223:GenericPublication" lang="en">
+				<dx223:publicationCreator xsi:type="dx223:InternationalIdentifier">
+					<dx223:country xsi:type="dx223:CountryEnum">ch</dx223:country>
+					<dx223:nationalIdentifier xsi:type="dx223:String">FEDRO</dx223:nationalIdentifier>
+				</dx223:publicationCreator>
+			</dx223:payloadPublication>
+		</dx223:d2LogicalModel>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,6 @@
+pyarrow
+pandas
+gcsfs
+google-cloud-storage
+pytest
+functions_framework
