@@ -2,7 +2,7 @@ import pytest
 import os
 
 from google.cloud import storage
-from main import create_blob, create_bucket
+from main import create_bucket
 
 class TestBucket:
     bucket_name = "prediswiss_test_bucket"
