@@ -19,7 +19,7 @@ headers = {
 }
 
 @functions_framework.cloud_event
-def ingestion_data(cloud_event):
+def ingestion_counter(cloud_event):
     storage_client = storage.Client(project="prediswiss")
     fs_gcs = gcsfs.GCSFileSystem(project='prediswiss')
 
