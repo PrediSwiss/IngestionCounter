@@ -41,8 +41,8 @@ jobs:
         run: |
           pytest tests.py
           
-     # - name: Create scheduler
-     #   run: gcloud scheduler jobs create pubsub PrediSwissScheduleDay --location="us-east1" --schedule="* * * * *" --topic="projects/${{secrets.PROJECT_ID}}/topics/${{secrets.TOPIC_ID}}" --message-body "ingeste"
+      - name: Create scheduler
+        run: gcloud scheduler jobs create pubsub PrediSwissScheduleDayCounter --location="us-east1" --schedule="0 0 * * *" --topic="projects/${{secrets.PROJECT_ID}}/topics/${{secrets.TOPIC_ID}}" --message-body "ingeste"
 
       - name: Deploy the function
         uses: 'google-github-actions/deploy-cloud-functions@v1'
