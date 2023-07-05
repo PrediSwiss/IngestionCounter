@@ -41,14 +41,15 @@ jobs:
         run: |
           pytest tests.py
           
-      - name: Create scheduler
-        run: gcloud scheduler jobs create pubsub PrediSwissScheduleDayCounter --location="us-east1" --schedule="0 0 * * *" --topic="projects/${{secrets.PROJECT_ID}}/topics/${{secrets.TOPIC_ID}}" --message-body "ingeste"
+     # - name: Create scheduler
+     #   run: gcloud scheduler jobs create pubsub PrediSwissScheduleDayCounter --location="us-east1" --schedule="0 0 * * *" --topic="projects/${{secrets.PROJECT_ID}}/topics/${{secrets.TOPIC_ID}}" --message-body "ingeste"
 
       - name: Deploy the function
         uses: 'google-github-actions/deploy-cloud-functions@v1'
         with:
           name: 'ingestion_counter'
           runtime: 'python311'
+          memory_mb: '512'
           env_vars: "OPENTRANSPORT_CREDENTIAL=${{secrets.OPENTRANSPORT_CREDENTIAL}}"
           event_trigger_type: "google.pubsub.topic.publish"
           event_trigger_resource: "projects/${{secrets.PROJECT_ID}}/topics/${{secrets.TOPIC_ID}}"
