@@ -29,7 +29,7 @@ def ingestion_counter(cloud_event):
         bucket = create_bucket(bucket_name, storage_client)
 
     data = toParquet(get_data(url=url, headers=headers))
-    if fs_gcs.exist(f"{bucket_name}/{file_name}"):
+    if fs_gcs.exists(f"{bucket_name}/{file_name}"):
         fs_gcs.delete(f"{bucket_name}/{file_name}")
     pq.write_to_dataset(data, root_path="gs://" + bucket_name + "/" + file_name, filesystem=fs_gcs)
 
